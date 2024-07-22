@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.minthanhtike.bookstores.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_book"
+            app:destination="@id/navigation_book" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_saved"
+        android:name="com.minthanhtike.bookstores.ui.saved.SavedFragment"
+        android:label="@string/title_book"
+        tools:layout="@layout/fragment_book" >
+        <action
+            android:id="@+id/action_navigation_saved_to_navigation_setting"
+            app:destination="@id/navigation_setting"
+            app:popUpToSaveState="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_book"
+        android:name="com.minthanhtike.bookstores.ui.books.BooksFragment"
+        android:label="@string/title_saved"
+        tools:layout="@layout/fragment_saved" >
+        <action
+            android:id="@+id/action_navigation_book_to_navigation_saved3"
+            app:destination="@id/navigation_saved"
+            app:popUpToSaveState="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.minthanhtike.bookstores.ui.setting.SettingFragment"
+        android:label="@string/title_setting"
+        tools:layout="@layout/fragment_setting">
+    </fragment>
+</navigation>
